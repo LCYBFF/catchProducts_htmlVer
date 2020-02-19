@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>淘宝和天猫店铺商品抓取</title>
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<link rel="stylesheet" href="layui/css/layui.css">
+	<style>
+		.layui-form-label{
+		    padding: 8px 10px!important;
+		}
+	</style>
+</head>
+<body style="overflow-x: hidden;">
+	<div class="layui-container">
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+			<legend>淘宝天猫店铺商品信息抓取(单页)</legend>
+		</fieldset>
+		<div class="layui-form layui-form-pane">
+			<div class="layui-form-item"pane>
+				<label class="layui-form-label">抓取类型</label>
+					<div class="layui-input-block">
+				        <input type="radio" name="type" value="taobao" title="淘宝" checked>
+				        <div class="layui-unselect layui-form-radio"><div>淘宝</div></div>
+				        <input type="radio" name="type" value="tmall" title="天猫">
+				        <div class="layui-unselect layui-form-radio"><div>天猫</div>
+			        </div>
+		        </div>
+			</div>
+			<div class="layui-form-item"pane>
+				<label class="layui-form-label">是否已格式化</label>
+					<div class="layui-input-block">
+				        <input type="radio" name="format" value="y" title="是">
+				        <div class="layui-unselect layui-form-radio"><div>是</div></div>
+				        <input type="radio" name="format" value="n" title="否" checked>
+				        <div class="layui-unselect layui-form-radio"><div>否</div></div>
+			        </div>
+		        </div>
+			</div>
+			<div class="layui-input-block">
+				<button id="load" class="layui-btn layui-btn-normal">载入页面</button>
+				<button id="view" class="layui-btn layui-btn-primary">预览页面</button>
+				<button id="ok" class="layui-btn">开始抓取</button>
+			</div>
+			<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+				<legend>使用说明</legend>
+			</fieldset>
+			<blockquote class="layui-elem-quote layui-quote-nm">
+				<h3 style="color:#393D49;">注意：淘宝页面截取shop-hesper-bd；天猫页面截取J_TItems</h3>
+				<h3 style="color:#FFB800;">格式化：如先前已将抓取的html进行格式化，请选择是，如无则否。</h3>
+				<h3 style="color:#FF5722;">流程：请先将需要爬取的店铺页面保存到同级目录下的target.html，点击载入页面，可预览，开始抓取后请查看控制台。</h3>
+			</blockquote>
+	    </div>
+	    <div id="target" style="display:none;width:100%;"></div>
+	</div>
+</body>
+<script type="text/javascript" src="catch.js"></script>
+</html>
